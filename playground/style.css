@@ -1,0 +1,42 @@
+:root {
+  --bg: #0d1117; --panel: #161b22; --line: #21262d; --fg: #e6edf3; --dim: #8b949e;
+  --blue: #58a6ff; --green: #3fb950; --amber: #d29922; --red: #f85149; --purple: #d2a8ff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+header { padding: 18px 22px 6px; }
+h1 { font-size: 20px; margin: 0 0 4px; }
+.sub, .note { color: var(--dim); font-weight: normal; font-size: 12px; }
+.note { margin: 4px 0 0; }
+a { color: var(--blue); }
+code { color: var(--amber); }
+.cols { display: flex; gap: 14px; padding: 14px 22px; align-items: flex-start; flex-wrap: wrap; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; flex: 1 1 380px; }
+.panel h2 { font-size: 14px; margin: 0 0 10px; }
+.files { display: flex; flex-direction: column; gap: 2px; margin-bottom: 10px; }
+.file { padding: 3px 8px; border-radius: 6px; cursor: pointer; color: var(--dim); }
+.file:hover { background: #1c2431; }
+.file.sel { background: #1c2431; color: var(--fg); }
+.file .changed { color: var(--amber); }
+.edit { display: flex; flex-direction: column; gap: 6px; }
+.fname { color: var(--amber); font-size: 12px; }
+textarea { width: 100%; height: 160px; background: #010409; color: var(--fg); border: 1px solid var(--line); border-radius: 6px; font: inherit; padding: 8px; box-sizing: border-box; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+input, button { background: #0d1117; color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; font: inherit; }
+button.primary { border-color: var(--blue); }
+button:hover { border-color: var(--dim); }
+button:disabled { opacity: .4; }
+.snaps { display: flex; flex-direction: column; gap: 2px; margin: 10px 0; }
+.snap { padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 12px; color: var(--dim); }
+.snap:hover { background: #1c2431; }
+.snap.sel { background: #1c2431; color: var(--fg); }
+.snap.selA { outline: 1px solid var(--blue); }
+.snap.selB { outline: 1px solid var(--green); }
+.snap .id { color: var(--blue); }
+.snap .reused { color: var(--dim); }
+.diffout { font-size: 12px; min-height: 18px; margin-top: 8px; }
+.diffout .add { color: var(--green); }
+.diffout .del { color: var(--red); }
+.diffout .mod { color: var(--amber); }
+.legend { color: var(--dim); font-size: 12px; }
+footer { padding: 4px 22px 20px; color: var(--dim); font-size: 12px; }

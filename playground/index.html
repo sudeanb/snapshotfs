@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SnapshotFS — copy-on-write snapshots, live</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>⧉ SnapshotFS <span class="sub">— the real engine, running on an in-memory FS</span></h1>
+  <p class="note">same <code>src/</code> as the CLI (tested in CI) over a MemoryFS adapter —
+  snapshots, dedup, diff, time travel and GC, all in your browser.
+  <a href="https://github.com/sudeanb/snapshotfs">how it works</a></p>
+</header>
+
+<main class="cols">
+  <section class="panel">
+    <h2>working tree <span class="sub" id="storeStats"></span></h2>
+    <div id="fileList" class="files"></div>
+    <div class="edit">
+      <div id="editingName" class="fname">(select a file)</div>
+      <textarea id="editor" spellcheck="false" disabled></textarea>
+      <div class="row">
+        <button id="save" disabled>save</button>
+        <button id="newFile">+ new file</button>
+        <button id="del" disabled>delete</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>snapshots</h2>
+    <div class="row">
+      <input id="label" type="text" placeholder="label (optional)">
+      <button id="snap" class="primary">◉ snapshot</button>
+    </div>
+    <div id="snapList" class="snaps"></div>
+    <div class="row">
+      <button id="checkoutBtn">⏪ checkout selected (prune)</button>
+      <button id="diffBtn">⤽ diff selected</button>
+    </div>
+    <div id="diffOut" class="diffout"></div>
+    <div class="row">
+      <button id="gcBtn">♻ gc</button>
+      <span id="gcOut" class="legend"></span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>store lives in memory here; the CLI does this against real directories —
+     see <code>demo/</code> for copy-paste scenarios.
+     <a href="https://github.com/sudeanb/snapshotfs#readme">README →</a></p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

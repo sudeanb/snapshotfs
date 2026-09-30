@@ -1,0 +1,11 @@
+{
+  "name": "snapshotfs",
+  "version": "0.1.0",
+  "description": "⧉ Copy-on-write snapshots for real directories: content-addressed dedup store, tree diff, time-travel checkout, mark-and-sweep GC and journal-based crash safety — zero dependencies. (The FUSE mount layer is documented in docs/DESIGN.md; the engine and CLI are portable.)",
+  "type": "module",
+  "scripts": { "test": "node --test" },
+  "engines": { "node": ">=18" },
+  "keywords": ["snapshot", "backup", "copy-on-write", "content-addressed", "deduplication", "garbage-collection", "crash-safety", "filesystem"],
+  "license": "MIT",
+  "bin": { "snapshotfs": "bin/snapshotfs.js" }
+}
